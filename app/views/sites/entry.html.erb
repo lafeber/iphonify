@@ -1,0 +1,12 @@
+<% content_for :top_buttons do %>
+  <div id="leftnav">
+    <%= link_to "Home", site_path(@site) %>
+  </div>
+<% end %>
+
+<div class="graytitle"><%= @item.title %></div>
+<ul class="pageitem">
+  <li class="textbox">
+    <%= CGI.unescapeHTML(@item.content) %>
+  </li>
+</ul>

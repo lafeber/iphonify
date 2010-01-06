@@ -5,7 +5,7 @@ class Site < ActiveRecord::Base
   validates_uniqueness_of :name, :case_sensitive => false
   validates_format_of :name, :with => /^[0-9a-zA-Z_-]*$/, :on => :create, :message => "Please only use digits, characters, - and _"
 
-  has_attached_file :icon, :styles => { :thumb => "48x48" }
+  has_attached_file :icon, :styles => { :thumb => "57x57" }
 
   def apple_touch_icon
     icon.nil? ? "/images/apple-touch-icon.png" : icon.url(:thumb)

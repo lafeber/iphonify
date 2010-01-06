@@ -1,4 +1,3 @@
-puts "MARTIJN is gek"
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|

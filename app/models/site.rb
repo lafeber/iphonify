@@ -14,8 +14,8 @@ class Site < ActiveRecord::Base
   private
   def validate
     begin
-      rss = SimpleRSS.parse open(@site.rss)
-      first_title = rss.items.first.title
+      #see if we can parse the rss and grab the title of the first item
+      SimpleRSS.parse(open(rss)).items.first.title
     rescue
       errors.add :rss, 'is not valid or contains zero items'
     end

@@ -1,5 +1,4 @@
 <ul class="pageitem">
-  <% logger.debug(@rss.items.first.inspect) %>
   <% @rss.items.each do |site| %>
     <li class="menu"><%= link_to site.title, "?entry=#{site.id}" %></li>
   <% end %>

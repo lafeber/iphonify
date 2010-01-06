@@ -7,6 +7,6 @@
 <div class="graytitle"><%= @item.title %></div>
 <ul class="pageitem">
   <li class="textbox">
-    <%= CGI.unescapeHTML(@item.content) %>
+    <%= show_rss_content(@item) %>
   </li>
 </ul>

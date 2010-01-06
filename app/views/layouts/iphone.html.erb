@@ -9,13 +9,13 @@
 <meta content="minimum-scale=1.0, width=device-width, maximum-scale=0.6667, user-scalable=no" name="viewport" />
 <link href="/stylesheets/iphone.css" rel="stylesheet" type="text/css" />
 <script src="/javascripts/functions.js" type="text/javascript"></script>
-<title><%= @rss.channel.title %></title>
+<title><%= @rss.channel.title if @rss %></title>
 </head>
 
 <body>
 
 <div id="topbar">
-  <div id="title"><%= @rss.channel.title %></div>
+  <div id="title"><%= @rss.channel.title if @rss %></div>
   <%= yield :top_buttons %>
 </div>
 

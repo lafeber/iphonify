@@ -2,8 +2,8 @@ class SitesController < ApplicationController
   layout :smart_layout
 
   def show
-    @site = Site.find_by_name(params[:name])
     begin
+      @site = Site.find_by_name(params[:name])
       @rss = SimpleRSS.parse open(@site.rss)
     rescue
       render :template => 'sites/notfound'

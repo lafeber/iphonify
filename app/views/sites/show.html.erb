@@ -1,5 +1,5 @@
 <ul class="pageitem">
   <% @rss.items.each do |site| %>
-    <li class="menu"><%= link_to site.title, "?entry=#{site.id}" %></li>
+    <li class="menu"><span class="name"><%= link_to site.title, "?entry=#{site.id}" %></span></li>
   <% end %>
 </ul>

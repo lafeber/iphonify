@@ -7,4 +7,10 @@ module ApplicationHelper
     content ||= item.try(:description)
     CGI.unescapeHTML(content)
   end
+
+  def get_published_id(item)
+    date = item.published
+    date ||= item.pubDate
+    date.to_i
+  end
 end

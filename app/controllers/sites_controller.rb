@@ -10,7 +10,7 @@ class SitesController < ApplicationController
     end
     entry = params[:entry]
     if entry
-      @item = @rss.items.select{|item| item.id = entry}.first
+      @item = @rss.items.select{|item| item.try(get_published(item)).to_i == entry.to_i}.first
       render :template => 'sites/entry'
     end
   end

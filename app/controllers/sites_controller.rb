@@ -23,7 +23,7 @@ class SitesController < ApplicationController
     @site = Site.new(params[:site])
     if @site.save && verify_recaptcha(@site)
       flash[:notice] = 'Site was successfully created.'
-      redirect_to("/#{@site.name}")
+      render :template => 'sites/success'
     else
       render :action => "new"
     end

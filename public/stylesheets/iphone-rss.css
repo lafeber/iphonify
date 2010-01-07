@@ -6,6 +6,11 @@ body, p, ol, ul, td {
   line-height: 18px;
 }
 
+#notice {
+  color: green;
+  text-align:center;
+}
+
 #wrapper {
   width:900px;
   margin: 30px auto;
@@ -18,16 +23,21 @@ body, p, ol, ul, td {
   background-color:#000;
 }
 
-#footer {
+#notice, #footer {
   margin: 0 auto;
   width: 868px;
 }
 
-#bottom {
+#congrats, #bottom {
   border-bottom: solid 1px #999;
   padding-bottom:10px;
 }
 
+#congrats {
+  font-size:30px;
+  line-height:35px;
+  font-style:italic;
+}
 #name { color:#000; }
 
 #footer form {width:101px; display:inline; line-height:24px;}
@@ -50,10 +60,11 @@ pre {
 }
 
 a { color: #058500; }
-/*a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
-*/
+
+#errorExplanation p, .fieldWithErrors, #errorExplanation, li { font-family: Verdana, sans-serif !important;}
+
 .fieldWithErrors {
+  color:#fff;
   padding: 2px;
   background-color: red;
   display: table;

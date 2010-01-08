@@ -19,8 +19,10 @@ body, p, ol, ul, td {
 #examples {
   margin: 0 auto;
   width: 868px;
-  height: 63px;
-  background-color:#000;
+  padding-left: 6px;
+  padding-top: 3px;
+  height: 80px;
+  background: url(/images/featured-bg.gif) no-repeat;
 }
 
 #notice, #footer {
@@ -100,3 +102,6 @@ a { color: #058500; }
   list-style: square;
 }
 
+.alert {
+  color:#900;
+}

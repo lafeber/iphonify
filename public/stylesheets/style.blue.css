@@ -1,0 +1,260 @@
+/*
+Author:			Gabre Cameron
+Author URI:		http://www.pxjunkie.blogspot.com
+Author E-mail:	gabrecameron@gmail.com
+*/
+
+
+/* === Default HTML === */
+body
+{
+	background: #000;
+	background-image: url(../images/bg.jpg);
+	background-position: center -100px;
+	background-repeat: no-repeat;
+	color: #b3b3b3;
+	font-family: "Myriad Pro", Arial;
+	font-size: 12px;
+	text-align: center; /* for IE */
+}
+a
+{
+	color: #0092db;
+	text-decoration: none;
+}
+h1 a {color: #fff;}
+
+.alert { margin-top:5px; color:#0092db;}
+
+#notice {text-align:center; color:green;}
+
+a:hover
+{
+	text-decoration: underline;
+}
+h1
+{
+	color: #fff;
+	font-size: 30px;
+	font-weight: bold;
+}
+h2
+{
+	color: #fff;
+	font-size: 15px;
+	font-weight: bold;
+}
+h3
+{
+	color: #fff;
+	font-size: 13px;
+}
+p
+{
+	margin: 0 0 15px 0;
+}
+
+.field {
+  clear:right;
+  min-height:60px;
+}
+
+.txt-l {
+  font-size:13px;
+  color:#fff;
+}
+/* === Container === */
+#Container
+{
+	width: 837px;
+	margin: 5% auto 0 auto;
+	text-align: left;
+}
+.clearfix
+{
+	clear: both;
+	display: block;
+}
+.divider
+{
+	border-bottom: 1px solid #000;
+	margin-bottom: 20px;
+}
+.spacer
+{
+	height: 20px;
+}
+
+/* === Left === */
+.lft
+{
+	float: left;
+	margin-top: 63px;
+	text-align: right;
+	width: 275px;
+}
+.tagline
+{
+	color: #0092db;
+	font-size: 13px;
+}
+.msg
+{
+	margin: 20px 0;
+}
+/* launch */
+.hasCountdown
+{
+	padding-left: 34px;
+}
+.countdown_amount
+{
+	color: #0092db;
+	font-size: 40px;
+	font-weight: bold;
+}
+.countdown_section
+{
+	color: #fff;
+	display: inline-table;
+	float: right;
+	text-transform: lowercase;
+	width: 60px;
+}
+
+/* === Middle === */
+.mid
+{
+	background-image: url(../images/phone.png);
+	background-position: top left;
+	background-repeat: no-repeat;
+	float: left;
+	height: 581px;
+	margin: 0 20px;
+	width: 237px;
+}
+/* cu3er */
+#Cu3er
+{
+	margin: 73px 0 0 23px;
+}
+
+
+
+/* === Right === */
+.rgt
+{
+	float: left;
+	margin-top: 63px;
+	text-align: left;
+	width: 285px;
+}
+.rgt .icon
+{
+	float: left;
+	margin-right: 10px;
+}
+.rgt p
+{
+	float: left;
+	width: 233px;
+}
+
+/* contact */
+.contact span
+{
+	color: #0092db;
+	font-weight: bold;
+}
+
+/* mail */
+.mail
+{
+	position: relative;
+}
+.round
+{
+	background-image: url(../images/txtbox.png);
+	background-position: top left;
+	background-repeat: no-repeat;
+	float: left;
+	height: 23px;
+	margin: 4px 0 0 0;
+	padding: 3px 0 0 6px;
+  width: 233px;
+}
+
+input.inround { border:0; width: 180px;}
+
+#SubscriptionForm .email
+{
+	background: transparent;
+	border: none;
+	color: #5f6a72;
+	font-family: "Myriad Pro", Arial;
+	font-size: 12px;
+	padding: 0 0px 0 10px;
+	width: 135px;
+}
+#SubscriptionForm .subscribe
+{
+	background: transparent;
+	background-image: url(../images/blue/btn-subscribe.png);
+	background-position: top left;
+	background-repeat: no-repeat;
+	border: none;
+	cursor: pointer;
+	height: 21px;
+	margin: 1px 0 0 4px;
+	width: 81px;
+}
+label.error, .output
+{
+	left: 30px;
+	position: absolute;
+	text-align: right;
+	top: -10px;
+	width: 233px;
+	z-index: 2;
+}
+
+/* twitter */
+.twitter .follow
+{
+	background-image: url(../images/blue/btn-twitter.png);
+	background-position: top left;
+	background-repeat: no-repeat;
+	display: block;
+	float: right;
+	height: 21px;
+	margin-top: 15px;
+	width: 111px;
+}
+
+
+.SI-FILES-STYLIZED label.cabinet
+{
+	width: 111px;
+	height: 22px;
+	background: url(/images/blue/btn-browse.png) 0 0 no-repeat;
+  float:left;
+	display: block;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.SI-FILES-STYLIZED label.cabinet input.file
+{
+	position: relative;
+	height: 100%;
+	width: auto;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
+
+#site_submit { border: none; background: transparent url(../images/blue/btn-submit.png) no-repeat; text-indent:-9999px; width:80px; height:21px;}
+
+.errorExplanation p {float:none;}
+.errorExplanation ul { margin:0 0 5px 0;}
+.errorExplanation li {color:red; margin-left:10px;}

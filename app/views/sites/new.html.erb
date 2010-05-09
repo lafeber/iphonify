@@ -1,25 +1,43 @@
-<%= image_tag('iphone-rss-small.png') %>
-
 <% form_for(@site, :html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
+<div class="txt-l">Your url: <span class="tagline">http://iphonify.net/<span id="name">...</span></span>
+</div><br />
 
-  <p>
-    <%= f.label :name %> <span class="desc">~ this defines the url: <span id="name"></span></span><br />
-    <%= f.text_field :name, :onkeyup => "showurl(this)" %>
-  </p>
-  <p>
-    <%= f.label :rss %> <span class="desc">~ the link of the rss feed</span><br />
-    <%= f.text_field :rss %>
-  </p>
-  <p>
-    <%= f.label :icon %> <span class="desc">~ will be resized to iPhone icon size (57 x 57)</span><br />
-    <%= f.file_field :icon %>
-  </p>
-  <p>
+  <div class="field">
+    <span class="desc">Choose your iphonify name:</span><br />
+    <%= image_tag 'icon-url.png', :class => 'icon' %>
+    <div class="round"><%= f.text_field :name, :onkeyup => "showurl(this)", :class => 'inround' %></div>
+  </div>
+  <div class="field">
+
+    <span class="desc">Your website url:</span><br />
+
+    <%= image_tag 'icon-rss.png', :class => 'icon' %>
+    <div class="round"><%= f.text_field :rss, :class => 'inround' %></div>
+  </div>
+
+  <div class="field">
+
+    <span class="desc">Your homescreen icon, will be resized to 57 x 57 pixels.</span><br /-->
+
+    <label class="cabinet"> <%= f.file_field :icon, :class => 'file' %></label>
+  </div>
+
+  <div class="field">
+
+    <span class="desc">You'll get 1 email per year if you fill in your email address:</span><br />
+
+    <%= image_tag 'icon-mail.png', :class => 'icon' %>
+    <div class="round"><%= f.text_field :email, :class => 'inround' %></div>
+  </div>
+
+
+  <div>
     <%= recaptcha_tags %>
-  </p>
+  </div>
+
   <p class="alert">
-    Please note that you can't edit the url after you've created it.
+    You can't edit the url after you've created it!
   </p>
   <p>
     <%= f.submit 'Create' %>
@@ -28,10 +46,6 @@
 
 <script type="text/javascript">
 function showurl(el) {
-	document.getElementById('name').innerHTML = 'http://iphonify.net/' + el.value;
+	document.getElementById('name').innerHTML = el.value;
 }
 </script>
-
-<div id="bottom">
-  <%= link_to '&laquo; back home', sites_path %>
-</div>

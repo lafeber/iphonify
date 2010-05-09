@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cu3er>
+	<settings>
+
+		<general slide_panel_width="194" slide_panel_height="292" slide_panel_horizontal_align="left" slide_panel_vertical_align="top" />
+
+		<auto_play>
+			<defaults symbol="circular" time="5" />
+			<tweenIn x="175" y="15" width="14" height="14" tint="0x0092db" />
+		</auto_play>
+
+
+    	<prev_button>
+    		<tweenIn alpha="0" />
+    		<tweenOver alpha="0"/>
+		</prev_button>
+
+    	<prev_symbol>
+			<defaults type="2" />
+			<tweenIn alpha="0" y="145" x="10" tint="0x0092db"/>
+		</prev_symbol>
+
+    	<next_button>
+    		<tweenIn alpha="0" />
+    		<tweenOver alpha="0"/>
+		</next_button>
+
+    	<next_symbol>
+			<defaults type="2" />
+			<tweenIn alpha="0" y="145" x="183" tint="0x0092db"/>
+		</next_symbol>
+
+	</settings>
+
+	<slides>
+
+        <slide>
+            <url>/images/rotator/slide01.jpg</url>
+        </slide>
+		<!-- changing transition beetween first & second slide -->
+        <transition num="3" slicing="vertical" direction="down"/>
+        <slide>
+       		<url>/images/rotator/slide02.jpg</url>
+        </slide>
+		<!-- changing transition beetween second & third slide -->
+        <transition num="4" direction="right" shader="flat" />
+		<slide>
+            <url>/images/rotator/slide03.jpg</url>
+        </slide>
+        <!-- transitions properties defined in transitions template -->
+		<slide>
+       		<url>/images/rotator/slide04.jpg</url>
+        </slide>
+		<transition num="6" slicing="vertical" direction="up" shader="flat" delay="0.05" z_multiplier="4" />
+        <slide>
+       		<url>/images/rotator/slide05.jpg</url>
+        </slide>
+
+	</slides>
+</cu3er>
+

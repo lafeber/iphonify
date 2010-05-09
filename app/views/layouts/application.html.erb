@@ -1,26 +1,91 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="description" content="Create an iPhone version of your RSS feed" />
   <meta name="keywords" content="iPhone RSS" />
-  <title>Create an iPhone version of your RSS feed</title>
-  <%= stylesheet_link_tag 'iphone-rss' %>
+  <meta name="author" content="Coupling" />
+  <meta name="robots" content="index, follow" />
+
+  <title>Create an iPhone version of your site</title>
+
+  <!-- JavaScript -->
+  <script type="text/javascript" src="/javascripts/swfobject.js"></script>
+  <script type="text/javascript" src="/javascripts/si.files.js"></script>
+
+  <!-- rotator -->
+  <script type="text/javascript">
+      var flashvars = {};
+      flashvars.xml = "/config.xml";
+      flashvars.font = "/inc/font.swf";
+      var attributes = {};
+      attributes.wmode = "transparent";
+      attributes.id = "slider";
+      swfobject.embedSWF("/inc/cu3er.swf", "Cu3er", "194", "292", "9", "/inc/expressInstall.swf", flashvars, attributes);
+
+      SI.Files.stylizeById('site_icon');
+  </script>
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.blue.css" />
+
+  <!-- Meta Tags -->
+
+
 </head>
 <body>
-  <div id="wrapper">
+
+  <div id="Container">
     <p id="notice"><%= flash[:notice] %></p>
-    <%= yield %>
-    <div id="footer">
-      &copy; 2009 Martijn Lafeber - suggestions via <a href="http://twitter.com/lafeber">@lafeber</a> - if you like it, <form id="buybeer" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+    <div class="lft">
+
+      <h1><a href="/">an iPhone version of your site</a></h1>
+      <span class="tagline">it's free and takes less than a minute</span>
+
+      <div class="msg">
+        <p>
+        All your site requires, is an RSS feed. After that, you can add your site to your home screen with the '+' button in the iPhone's browser.
+        </p>
+      </div>
+
+      <h2>Number of sites served:</h2>
+      <div id="Launch" class="hasCountdown">
+<span class="countdown_row countdown_show4"><span class="countdown_section"><span class="countdown_amount"><%= Site.count %></span></span>
+      </div>
+
+<div class="clearfix divider"></div><!-- clearfix -->
+
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="donate-please">
       <input type="hidden" name="cmd" value="_s-xclick">
-      <input type="hidden" name="hosted_button_id" value="10980472">
-      <input type="image" src="http://www.iphonify.net/images/buybeer.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+      <input type="hidden" name="hosted_button_id" value="DC9KBSYQWTT4S">
+      <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
       <img alt="" border="0" src="https://www.paypal.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
       </form>
-    </div>
-  </div>
+
+
+    </div><!-- lft -->
+
+
+
+
+    <div class="mid">
+      <div id="Cu3er"></div>
+    </div><!-- mid -->
+
+    <div class="rgt">
+
+      <div class="mail">
+        <%= yield %>
+      </div>
+      <div class="clearfix"></div><!-- clearfix -->
+
+    </div><!-- rgt -->
+
+  </div><!-- Container -->
   <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-551478-14']);

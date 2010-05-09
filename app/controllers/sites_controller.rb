@@ -1,6 +1,10 @@
 class SitesController < ApplicationController
   layout :smart_layout
 
+  def index
+    @site = Site.new
+  end
+
   def show
     begin
       @site = Site.find_by_name(params[:name])

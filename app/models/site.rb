@@ -17,7 +17,7 @@ class Site < ActiveRecord::Base
       #see if we can parse the rss and grab the title of the first item
       SimpleRSS.parse(open(rss)).items.first.title
     rescue
-      errors.add :rss, 'is not valid or contains zero items'
+      errors.add :rss, 'could not be found on your site'
     end
   end
 end

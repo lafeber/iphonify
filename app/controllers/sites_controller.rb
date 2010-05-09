@@ -1,10 +1,6 @@
 class SitesController < ApplicationController
   layout :smart_layout
 
-  def index
-    @site = Site.new
-  end
-
   def show
     begin
       @site = Site.find_by_name(params[:name])
@@ -24,7 +20,9 @@ class SitesController < ApplicationController
   end
 
   def create
-    @site = Site.new(params[:site])
+    siteparams = params[:site].merge!(:rss => get_url(params[:site][:rss]))
+
+    @site = Site.new(siteparams)
     if @site.save && verify_recaptcha(@site)
       flash[:notice] = 'Site was successfully created.'
       render :template => 'sites/success'
@@ -36,5 +34,21 @@ class SitesController < ApplicationController
   protected
   def smart_layout
     (action_name == 'show') ? 'iphone' : 'application'
+  end
+
+  def get_url(page)
+    begin
+      require 'rubygems'
+      require 'mechanize'
+      agent = WWW::Mechanize.new
+      agent.user_agent_alias = 'Mac Safari' # Not setting an alias will result in a 403
+      page = agent.get(page)
+      link_array = page.search('//link[@type="application/rss+xml"]')
+      link_array ||= page.search('//link[@type="application/rsd+xml"]')
+      link = link_array.first['href']
+    rescue
+      flash[:errors] = 'rss could not be found on your site'
+      link = ''
+    end
   end
 end
